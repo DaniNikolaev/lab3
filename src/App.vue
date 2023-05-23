@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="nav">
+    <RouterLink :to="{ name: 'Countries' }">Страны</RouterLink>
+    <RouterLink :to="{ name: 'Childrens' }">Дети</RouterLink>
+  </div>
+  <router-view/>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+<style lang="scss">
+body {
+  margin: 0;
 }
-</script>
-
-<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+}
+
+#nav {
+  padding: 15px;
+  background: #c8cccc;
+}
+
+#nav a {
+  font-weight: bold;
   color: #2c3e50;
-  margin-top: 60px;
+  text-decoration: none;
+  &:not(:last-child) {
+    margin-right: 8px;
+   }
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
